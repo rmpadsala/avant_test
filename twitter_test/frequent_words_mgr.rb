@@ -20,7 +20,7 @@ module AvantTest
         @freq_word_q.delete_min if (@freq_word_q.size - 1) > @max_frequent_word_count
       }
 
-      @freq_word_q.priority_q.sort_by { |item| item.frequency }.reverse.map { |item| item.word }
+      @freq_word_q.priority_q.sort_by { |item| item.frequency }.reverse.map { |item| [item.word, item.frequency] }
     end
   end
 end
