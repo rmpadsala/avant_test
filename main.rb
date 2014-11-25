@@ -7,4 +7,4 @@ p "factors_and_caching output for ary ([10,2,5,20]) - #{out_test_1}"
 
 # Run test 2
 out_test_2 = AvantTest::TwitterStreamCollector.new().frequent_words
-p "most frequent words in last 5 minutes #{out_test_2}"
+p "most frequent words on twitter in last 5 minutes #{out_test_2}"
