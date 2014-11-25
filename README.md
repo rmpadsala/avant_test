@@ -46,8 +46,8 @@ Let me know if you have any questions about this (and also please confirm that y
 Optional Part B) How would you implement it so that if you had to stop the program and restart,
  it could pick up from the total word counts that you started from?
 
-## NOTE: These solutions uses following gems, so please make sure to install these gems before running.
+#### NOTE: These solutions uses following gems, so please make sure to install these gems before running.
 
-`oauth`
-`rspec`
-`tweetstream`
+1. oauth
+2. rspec
+3. tweetstream
