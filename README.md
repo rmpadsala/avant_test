@@ -1,4 +1,4 @@
-# Avant code challanges
+# Avant code challenges
 
 ## Problem 1
 
