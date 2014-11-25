@@ -1,3 +1,7 @@
+# min priroty queue implementation. Each item in the queue is
+# an object with string and frequency attribute. Proirity is
+# determined using frequency attribute. Object with lowest frequency
+# value will be the first one in the queue.
 module AvantTest
   class MinPriorityQueue
     QueueElement = Struct.new(:word, :frequency)

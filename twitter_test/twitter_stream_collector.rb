@@ -23,12 +23,14 @@ module AvantTest
       @words_hash = Hash.new(0)
     end
 
+    # collect recent tweets and find most frequent words
     def frequent_words
       collect_sample_tweets
       FrequentWordsMgr.new(@words_hash).frequent_words
     end
 
     private
+      # collect last five minutes tweets from twitter
       def collect_sample_tweets(default_minutes=5)
         tweets = []
         EM.run do
@@ -44,8 +46,10 @@ module AvantTest
         end
       end
 
+      # process all the tweets and create hash of words from tweets (filter out words
+      # form IGNORE_WORDS_LIST)
       def process_tweets(tweets)
-        puts "size #{tweets.size}"
+        puts "Total tweets #{tweets.size}"
         tweets.each { |tweet|
           words = tweet.split
           words.each { |word|
