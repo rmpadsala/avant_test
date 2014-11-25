@@ -32,17 +32,14 @@ module AvantTest
       def collect_sample_tweets(default_minutes=5)
         tweets = []
         EM.run do
-          # do something on an interval
-          @client.sample do |status|
-            # The status object is a special Hash with
-            # method access to its keys.
-            tweets << "#{status.text}"
-            puts "collected #{tweets.size} tweets" if (tweets.size % 1000).zero?
-          end
-
           EM::PeriodicTimer.new(default_minutes*60) do
             @client.stop
             process_tweets(tweets)
+          end
+          # do something on an interval
+          @client.sample do |status|
+            tweets << "#{status.text}"
+            puts "collected #{tweets.size} tweets" if (tweets.size % 1000).zero?
           end
         end
       end
